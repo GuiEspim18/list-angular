@@ -2,7 +2,6 @@ import { AngularMaterialModule } from './shared/modules/angular-material/angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/utils/header/header.component';
@@ -27,7 +26,6 @@ import { IconButtonComponent } from './shared/components/icon-button/icon-button
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     ImportsModule
