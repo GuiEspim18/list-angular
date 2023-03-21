@@ -1,2 +1,16 @@
-<app-header>
-</app-header>
+<app-header title="Angular List"></app-header>
+
+<section class="container">
+    <app-card>
+        <h1>Add something to your table</h1>
+        <form [formGroup]="form" (ngSubmit)="submit(form)">
+            <app-text-input label="Add here..." [value]="form.get('add')?.value" type="text" [formControlExist]="true" (onKeyUp)="gettingEvent($event)"></app-text-input>
+            <app-button type="submit" text="Submit"></app-button>
+        </form>
+    </app-card>
+    <div>
+        <p>Length: {{arr.length}}</p>
+    </div>
+
+    <app-table [dataSource]="arr"></app-table>
+</section>

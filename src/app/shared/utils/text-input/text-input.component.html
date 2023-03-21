@@ -1,4 +1,7 @@
-<mat-form-field class="example-full-width" apearence>
-  <mat-label>Company (disabled)</mat-label>
-  <input matInput>
-</mat-form-field>
+<div class="input-holder">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>{{label}}</mat-label>
+    <input *ngIf="formControlExist" matInput type="{{type}}" value="{{value}}"(keyup)="keyUp()" [formControl]="control">
+    <input *ngIf="!formControlExist" matInput type="{{type}}" value="{{value}}">
+  </mat-form-field>
+</div>

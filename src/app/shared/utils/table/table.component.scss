@@ -1,0 +1,36 @@
+@import "src/assets/css/main/main.scss";
+
+table {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+}
+
+.header {
+    border-bottom: solid 1px $title !important;
+
+    th {
+        padding: 20px !important;
+    }
+}
+
+.body{
+    border-bottom: solid 1px $title !important;
+    
+    td {
+        padding: 20px !important;
+    }
+}
+
+.ng-star-inserted:nth-child(1) {
+    width: 10% !important;
+}
+
+.ng-star-inserted:nth-child(3) {
+    width: 10% !important;
+}
+
+.ng-star-inserted {
+    text-align: start;
+}

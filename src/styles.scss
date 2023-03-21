@@ -44,3 +44,22 @@ header > mat-toolbar > h1 {
   width: 100%;
   text-align: center !important;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-mdc-card {
+  padding: 20px !important;
+  max-width: 500px;
+}
+
+h1 {
+  color: $title !important;
+}
