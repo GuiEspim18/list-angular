@@ -7,9 +7,9 @@ import { ITable } from '../utils/interfaces/table/table.interface';
 })
 export class ListService {
 
-  private readonly listInfo: BehaviorSubject<any> = new BehaviorSubject([{name: "guilherme", badge: []}])
+  private readonly listInfo: BehaviorSubject<any> = new BehaviorSubject([])
 
-  public currentListInfo: Observable<Array<ITable>> =  this.listInfo.asObservable();
+  public currentListInfo: Observable<Array<ITable>> = this.listInfo.asObservable();
 
   private originalList: Array<ITable> = new Array();
 
@@ -22,7 +22,7 @@ export class ListService {
     this.populate();
   }
 
-  
+
   /* Populating */
   private populate(): void {
     this.currentListInfo.subscribe((element: Array<ITable>) => {

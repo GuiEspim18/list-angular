@@ -7,8 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
 
-  @Input() text: string = "";
+  @Input() public text: string = "";
 
-  @Input() type: string = "submit";
+  @Input() public type: string = "submit";
+
+  @Input () public disabled: boolean = false;
 
 }

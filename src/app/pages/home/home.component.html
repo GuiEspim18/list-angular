@@ -14,6 +14,7 @@
     <div class="input-holder">
         <app-search-input placeholder="Pesquisar" (filter)="gettingEvent($event)"></app-search-input>
         <div>
+            <app-button text="Badges" type="button" matBadge="{{badges.length > 0 ? badges.length : ''}}" matBadgeColor="warn" [disabled]="badges.length > 0 ? false : true" (click)="badges.length === 0 ? '' : openDialogService.open(badgeComponent)"></app-button>
             <app-icon-button icon="add" (click)="openDialogService.open(component)"></app-icon-button>
         </div>
     </div>

@@ -6,10 +6,15 @@
         <td>{{i+1}}</td>
         <td>
             <div class="name">
-                {{item.name}} 
-                <div class="badges">
-                    <app-badge  *ngFor="let badge of item.badge" [color]="badge.color"></app-badge>
-                </div>
+                <p>
+                    {{item.name}}
+                </p>
+                <ul>
+                    <li *ngFor="let badge of item.badge">
+                        <app-badge [color]="badge.color" [matTooltip]="badge.name"
+                            aria-label="Button that displays a tooltip when focused or hovered over"></app-badge>
+                    </li>
+                </ul>
             </div>
         </td>
         <td class="actions">

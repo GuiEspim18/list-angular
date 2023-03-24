@@ -17,11 +17,11 @@ export class BadgeService {
   /* Set badges */
   public set(obj: IBadge): void {
     this.currentBadgeInfo.subscribe((badgeInfo: Array<IBadge>) =>{ 
-      const find: number = badgeInfo.findIndex((element: IBadge) => element.color === obj.color)
+      const find: number = badgeInfo.findIndex((element: IBadge) => element.color === (obj.color || element.name === obj.name) && badgeInfo.length < 5 )
       if (find === -1) {
         badgeInfo.push(obj)
       } else {
-        alert("this color of badge already exists")
+        alert("this color or name of badge already exists")
       }
     })
   }

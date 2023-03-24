@@ -17,7 +17,7 @@ export class TableComponent {
 
   @Input() public dataSource: Array<ITable | any> = new Array();
 
-  public readonly component: ComponentType<SetBadgeDialogComponent> = SetBadgeDialogComponent
+  public readonly component: ComponentType<SetBadgeDialogComponent> = SetBadgeDialogComponent;
 
 
   constructor (public readonly openDialogService: OpenDialogService) { }

@@ -17,6 +17,7 @@ import { AddBadgeDialogComponent } from './shared/components/dialogs/add-badge-d
 import { DialogHeaderComponent } from './shared/components/dialog-header/dialog-header.component';
 import { SetBadgeDialogComponent } from './shared/components/dialogs/set-badge-dialog/set-badge-dialog.component';
 import { BadgeComponent } from './shared/utils/badge/badge.component';
+import { BadgesDialogComponent } from './shared/components/dialogs/badges-dialog/badges-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BadgeComponent } from './shared/utils/badge/badge.component';
     DialogHeaderComponent,
     SetBadgeDialogComponent,
     BadgeComponent,
+    BadgesDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,9 +6,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatBadgeModule } from '@angular/material/badge';
 
 const modules: Array<any> = [
   CommonModule,
@@ -18,9 +19,10 @@ const modules: Array<any> = [
   MatCardModule,
   MatButtonModule,
   MatIconModule,
-  MatBadgeModule,
+  MatTooltipModule,
   MatDialogModule,
-  MatSelectModule
+  MatSelectModule,
+  MatBadgeModule
 ];
 
 @NgModule({

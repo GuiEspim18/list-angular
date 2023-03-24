@@ -24,7 +24,7 @@ export class SetBadgeDialogComponent implements OnInit {
   public list: ITable;
 
 
-  constructor(private readonly badgeService: BadgeService, @Inject(MAT_DIALOG_DATA) public data: ITable, public readonly listService: ListService, public readonly openDialogService: OpenDialogService) { }
+  constructor(private readonly badgeService: BadgeService, @Inject(MAT_DIALOG_DATA) public data: ITable, public readonly listService: ListService) { }
 
 
   public ngOnInit(): void {
@@ -51,7 +51,6 @@ export class SetBadgeDialogComponent implements OnInit {
         const badge: Array<any> = element[index].badge;
         const badgeExists: number = badge.findIndex((badgeIndex: IBadge) => badgeIndex.name === value.name);
         if (badgeExists === -1) this.list.badge.push(value);
-        this.openDialogService.dialogRef.close();
       })
     }
   }

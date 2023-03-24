@@ -23,6 +23,12 @@ app-sub-header {
     justify-content: space-between;
     padding: 0 10px;
     align-items: center;
+    flex-wrap: wrap;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
 }
 
 h1 {

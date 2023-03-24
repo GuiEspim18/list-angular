@@ -1,0 +1,16 @@
+<app-dialog-header>
+    <mat-icon [mat-dialog-close]="true">close</mat-icon>
+</app-dialog-header>
+
+<section>
+    <h1>Badges</h1>
+    <ul>
+        <li *ngFor="let item of badges; let i = index">
+            <div>
+                <p>{{item.name}}</p> 
+                <input type="color" disabled value="{{item.color}}"> 
+            </div>
+            <app-icon-button icon="delete" (click)="delete(i)"></app-icon-button>
+        </li>
+    </ul>
+</section>

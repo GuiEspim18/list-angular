@@ -38,7 +38,7 @@ $list-theme: mat.define-light-theme((
 @import "src/assets/css/main/main.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: $background; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 header > mat-toolbar > h1 {
   width: 100%;
@@ -48,7 +48,6 @@ header > mat-toolbar > h1 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,4 +61,12 @@ header > mat-toolbar > h1 {
 
 h1 {
   color: $title !important;
+}
+
+mat-dialog-container {
+  min-width: 300px !important;
+}
+
+.cdk-overlay-container {
+  overflow-x: auto !important;
 }

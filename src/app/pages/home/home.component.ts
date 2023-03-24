@@ -8,6 +8,8 @@ import { IBadge } from 'src/app/shared/utils/interfaces/badge/badge.interface';
 import { IHomeForm } from 'src/app/shared/utils/interfaces/home-form/home-form.interface';
 import { ITable } from 'src/app/shared/utils/interfaces/table/table.interface';
 import { OnInit } from '@angular/core';
+import { BadgeService } from 'src/app/shared/services/badge.service';
+import { BadgesDialogComponent } from 'src/app/shared/components/dialogs/badges-dialog/badges-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -22,12 +24,14 @@ export class HomeComponent implements OnInit {
 
   public arr: Array<ITable> = new Array();
 
-  public readonly component: ComponentType<any> = AddBadgeDialogComponent
+  public readonly component: ComponentType<AddBadgeDialogComponent> = AddBadgeDialogComponent;
+
+  public readonly badgeComponent: ComponentType<BadgesDialogComponent> = BadgesDialogComponent;
 
   public badges: Array<IBadge> = new Array();
   
 
-  constructor(public readonly openDialogService: OpenDialogService, private readonly listService: ListService) {}
+  constructor(public readonly openDialogService: OpenDialogService, private readonly listService: ListService, private readonly badgeService: BadgeService) {}
 
 
   public ngOnInit(): void {
@@ -48,6 +52,7 @@ export class HomeComponent implements OnInit {
   /* Populate arr */
   private popualte(): void {
     this.listService.currentListInfo.subscribe((element: Array<ITable>) => this.arr = element)
+    this.badgeService.currentBadgeInfo.subscribe((element: Array<IBadge>) => this.badges = element)
   }
 
 

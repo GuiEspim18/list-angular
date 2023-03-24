@@ -20,9 +20,9 @@ table {
     }
 }
 
-.body{
+.body {
     border-bottom: solid 1px $title !important;
-    
+
     td {
         padding: 20px !important;
     }
@@ -43,10 +43,20 @@ table {
 .name {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-    .badges {
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0 10px !important;
+    padding: 0 !important;
+    min-width: 150px;
+
+    li {
+        width: 20px !important;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        margin: 0 10px !important;
     }
 }
