@@ -5,6 +5,11 @@ table {
     margin: 0px;
     padding: 0px;
     border-collapse: collapse;
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .header {
@@ -33,4 +38,15 @@ table {
 
 .ng-star-inserted {
     text-align: start;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .badges {
+        display: flex;
+        justify-content: space-between;
+    }
 }

@@ -1,35 +1,27 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { ControlContainer, FormControl, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
   templateUrl: './text-input.component.html',
-  styleUrls: ['./text-input.component.scss']
+  styleUrls: ['./text-input.component.scss'],
+  viewProviders: [
+    {
+      provide: ControlContainer,
+      useExisting: FormGroupDirective
+    }
+  ]
 })
-export class TextInputComponent  {
+export class TextInputComponent {
 
-  @Input() type: string = "";
+  @Input() public type: string = "";
 
-  @Input() label: string = "";
-  
-  @Input() value: any = "";
+  @Input() public label: string = "";
 
-  @Input() formControlExist: boolean = false;
+  @Input() public value: any = "";
 
-  public readonly control: FormControl = new FormControl('');
+  @Input() public formControlExist: boolean = false;
 
-  @Output() onKeyUp: EventEmitter<string> = new EventEmitter();
-
-
-  public ngOnChanges(changes: SimpleChanges) {
-    this.control.setValue(changes['value'].currentValue)
-  }
-
-
-  /* Emitting the control value */
-
-  public keyUp(): void {
-    this.onKeyUp.emit(this.control.value)
-  }
+  @Input() public controlName: string = "";
 
 }

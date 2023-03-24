@@ -9,9 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextInputComponent } from './shared/utils/text-input/text-input.component';
 import { CardComponent } from './shared/utils/card/card.component';
 import { ButtonComponent } from './shared/utils/button/button.component';
-import { ImportsModule } from './shared/modules/imports/imports/imports.module';
+import { ImportsModule } from './shared/modules/imports/imports.module';
 import { TableComponent } from './shared/utils/table/table.component';
 import { IconButtonComponent } from './shared/components/icon-button/icon-button.component';
+import { SearchInputComponent } from './shared/utils/search-input/search-input.component';
+import { AddBadgeDialogComponent } from './shared/components/dialogs/add-badge-dialog/add-badge-dialog.component';
+import { DialogHeaderComponent } from './shared/components/dialog-header/dialog-header.component';
+import { SetBadgeDialogComponent } from './shared/components/dialogs/set-badge-dialog/set-badge-dialog.component';
+import { BadgeComponent } from './shared/utils/badge/badge.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { IconButtonComponent } from './shared/components/icon-button/icon-button
     ButtonComponent,
     TableComponent,
     IconButtonComponent,
+    SearchInputComponent,
+    AddBadgeDialogComponent,
+    DialogHeaderComponent,
+    SetBadgeDialogComponent,
+    BadgeComponent,
   ],
   imports: [
     BrowserModule,

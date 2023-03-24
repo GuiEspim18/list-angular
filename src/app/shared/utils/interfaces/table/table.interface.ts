@@ -1,4 +1,4 @@
 export interface ITable {
     name: string;
-    index: number
+    badge: Array<string>;
 }

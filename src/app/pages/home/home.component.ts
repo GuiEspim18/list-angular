@@ -1,42 +1,59 @@
+import { ComponentType } from '@angular/cdk/portal';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { AddBadgeDialogComponent } from 'src/app/shared/components/dialogs/add-badge-dialog/add-badge-dialog.component';
+import { ListService } from 'src/app/shared/services/list.service';
+import { OpenDialogService } from 'src/app/shared/services/open-dialog.service';
+import { IBadge } from 'src/app/shared/utils/interfaces/badge/badge.interface';
 import { IHomeForm } from 'src/app/shared/utils/interfaces/home-form/home-form.interface';
 import { ITable } from 'src/app/shared/utils/interfaces/table/table.interface';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   public readonly form: FormGroup<IHomeForm> = new FormGroup({
-    "add": new FormControl('', [Validators.required])
+    "add": new FormControl('')
   });
 
   public arr: Array<ITable> = new Array();
 
+  public readonly component: ComponentType<any> = AddBadgeDialogComponent
 
-  /* Getting the keyDownEvent from input */
+  public badges: Array<IBadge> = new Array();
+  
 
-  public gettingEvent(event: string): void {
-    const value: string = event;
-    if (value.length > 0) {
-      this.form.get("add")?.setValue(value);
-    }
+  constructor(public readonly openDialogService: OpenDialogService, private readonly listService: ListService) {}
+
+
+  public ngOnInit(): void {
+    this.popualte();
   }
 
 
   /* Submit form */
-
   public submit(form: FormGroup): void {
-    if (form.valid) {
+    if (form.value.add.length > 0) {
       const name: string = form.value.add
-      const index: number = this.arr.length + 1
-      this.form.get("add")?.setValue('');
-      console.log(this.form.get("add")?.value)
-      this.arr.push({name: name, index: index});
+      this.form.reset();
+      this.listService.set({name: name, badge: []})
     }
+  }
+
+
+  /* Populate arr */
+  private popualte(): void {
+    this.listService.currentListInfo.subscribe((element: Array<ITable>) => this.arr = element)
+  }
+
+
+  /* Getting filter events */
+  public gettingEvent(event: any): void {
+    this.arr = event
   }
 
 }

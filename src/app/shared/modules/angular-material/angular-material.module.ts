@@ -6,6 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 const modules: Array<any> = [
   CommonModule,
@@ -14,7 +17,10 @@ const modules: Array<any> = [
   MatInputModule,
   MatCardModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatBadgeModule,
+  MatDialogModule,
+  MatSelectModule
 ];
 
 @NgModule({

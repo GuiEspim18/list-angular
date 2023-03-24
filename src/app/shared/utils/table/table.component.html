@@ -4,8 +4,16 @@
     </tr>
     <tr *ngFor="let item of dataSource; let i = index" class="body">
         <td>{{i+1}}</td>
-        <td>{{item.name}}</td>
         <td>
+            <div class="name">
+                {{item.name}} 
+                <div class="badges">
+                    <app-badge  *ngFor="let badge of item.badge" [color]="badge.color"></app-badge>
+                </div>
+            </div>
+        </td>
+        <td class="actions">
+            <app-icon-button icon="add" (click)="openDialogService.open(component, item)"></app-icon-button>
             <app-icon-button icon="delete" (click)="delete(i)"></app-icon-button>
         </td>
     </tr>

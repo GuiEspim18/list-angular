@@ -1,0 +1,17 @@
+<app-dialog-header>
+    <mat-icon [mat-dialog-close]="true">close</mat-icon>
+</app-dialog-header>
+<section>
+    <h1>Set a badge</h1>
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a badge</mat-label>
+                <mat-select formControlName="badge">
+                    <mat-option *ngFor="let item of badges" [value]="item">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <app-button text="Done" type="submit"></app-button>
+    </form>
+</section>

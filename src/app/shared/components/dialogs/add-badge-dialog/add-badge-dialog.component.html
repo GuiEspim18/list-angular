@@ -1,0 +1,16 @@
+<app-dialog-header>
+    <mat-icon [mat-dialog-close]="true">close</mat-icon>
+</app-dialog-header>
+<section>
+    <h1>Add some badge</h1>
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
+        <div class="input-color-div">
+            <p>Choose a color: </p>
+            <input type="color" name="color" id="color" formControlName="color">
+        </div>
+        <div class="input-div">
+            <app-text-input label="Badge name" [value]="form.get('add')?.value" type="text" [formControlExist]="true" controlName="name"></app-text-input>
+        </div>
+        <app-button text="Done" type="submit"></app-button>
+    </form>
+</section>
